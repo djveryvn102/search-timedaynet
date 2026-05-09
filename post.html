@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Expert insights on insurance, legal, and financial strategies. Stay informed with Search.TimeDay's professional resources and curated guides.">
+    <link rel="canonical" href="https://search.timeday.net/post.html">
     <title>Navigating Insurance Policies: Tips and Guides | Search.TimeDay</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
@@ -59,7 +61,7 @@
         .author-info p { font-size: 0.95rem; color: var(--muted); line-height: 1.5; margin: 0; }
         .author-info b { color: var(--primary); }
 
-        .post-body h1 { font-size: 2.8rem; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 25px; }
+        .post-body h1 { font-size: clamp(2rem, 5vw, 2.8rem); font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 25px; }
         .post-body p { margin-bottom: 20px; font-size: 1.15rem; color: #3c4043; }
 
         /* --- RSOC BOX --- */
@@ -76,6 +78,7 @@
             padding: 20px 25px; border-radius: 10px; display: flex; justify-content: space-between; 
             align-items: center; font-size: 1.25rem; font-weight: 700;
             transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            min-height: 48px;
         }
         .rsoc-item:hover { 
             background: var(--accent-orange); 
@@ -107,29 +110,39 @@
         .f-col a { display: block; color: #bdc3c7; margin-bottom: 12px; font-size: 0.95rem; }
         .f-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #7f8c8d; font-size: 0.9rem; }
 
-        @media (max-width: 768px) {
+        /* --- RESPONSIVE --- */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .related-grid { grid-template-columns: repeat(2, 1fr); }
+            .post-body h1 { font-size: 2.2rem; }
             .f-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 767px) {
             .related-grid { grid-template-columns: 1fr; }
-            .post-body h1 { font-size: 2.1rem; }
-            .top-menu { display: none; }
+            .related-img { height: 200px; }
+            .author-box { flex-direction: column; text-align: center; }
+            .author-img { margin-bottom: 15px; }
+            .rsoc-item { font-size: 1.1rem; padding: 15px 20px; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
+            .post-body h1 { font-size: 2rem; }
+            .rsoc-box { padding: 20px; }
         }
     </style>
 </head>
 <body>
 
-
     <nav>
-        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <a href="https://search.timeday.net/" class="logo">Search.</a>
         <div class="nav-links">
-            <a href="#">Insurance</a>
-            <a href="#">Finance</a>
-            <a href="#">Legal</a>
+            <a href="category.html">Insurance</a>
+            <a href="category.html">Finance</a>
+            <a href="category.html">Legal</a>
         </div>
     </nav>
 
     <main class="article-container">
         <div class="author-box">
-            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Author" class="author-img">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150" alt="Sarah Jenkins - Senior Financial Analyst" class="author-img" loading="lazy" width="80" height="80">
             <div class="author-info">
                 <h3>Sarah Jenkins</h3>
                 <p><b>Senior Financial Analyst</b> • Specializing in insurance risk management and legal compliance. Helping readers navigate complex financial landscapes in 2026.</p>
@@ -153,24 +166,24 @@
             </div>
 
             <div class="related-section">
-                <h3 class="related-title">Related Articles</h3>
+                <h2 class="related-title">Related Articles</h2>
                 <div class="related-grid">
                     <a href="#" class="related-card">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400" class="related-img" alt="Mortgage">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400" class="related-img" alt="Mortgage Trends" loading="lazy" width="400" height="150">
                         <div class="related-info">
                             <h4>Mortgage Trends for 2026</h4>
                             <p>Discover how interest rates are affecting new homebuyers this year...</p>
                         </div>
                     </a>
                     <a href="#" class="related-card">
-                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400" class="related-img" alt="Legal">
+                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400" class="related-img" alt="Legal Regulations" loading="lazy" width="400" height="150">
                         <div class="related-info">
                             <h4>New Legal Regulations</h4>
                             <p>A comprehensive guide to recent changes in business law and compliance...</p>
                         </div>
                     </a>
                     <a href="#" class="related-card">
-                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=400" class="related-img" alt="Tax">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=400" class="related-img" alt="Tax Relief" loading="lazy" width="400" height="150">
                         <div class="related-info">
                             <h4>Tax Relief Strategies</h4>
                             <p>Proven methods to manage and reduce your business tax burden effectively...</p>
@@ -195,10 +208,7 @@
                 <h4>Support</h4>
                 <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
             </div>
-            <div class="f-col">
-                <h4>Network</h4>
-                <a href="#">Partners</a><a href="#">Resources</a><a href="#">Updates</a><a href="#">Services</a>
-            </div>
+            
         </div>
         <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
     </footer>

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Search.TimeDay's mission to simplify complex financial decisions through expert insights and high-fidelity search experiences.">
+    <link rel="canonical" href="https://search.timeday.net/about.html">
     <title>About Us | Search.TimeDay - Professional Search Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
@@ -23,7 +26,7 @@
 
         /* ABOUT HERO */
         .about-hero { background: var(--dark); color: #fff; padding: 80px 0; text-align: center; }
-        .about-hero h1 { font-size: 3rem; font-weight: 800; margin-bottom: 20px; }
+        .about-hero h1 { font-size: clamp(2.2rem, 8vw, 3rem); font-weight: 800; margin-bottom: 20px; }
         .about-hero p { font-size: 1.2rem; opacity: 0.8; max-width: 700px; margin: 0 auto; }
 
         /* CONTENT SECTION */
@@ -39,7 +42,18 @@
         .stat-card span { font-weight: 600; color: var(--muted); text-transform: uppercase; font-size: 0.8rem; }
 
         /* IMAGE DECORATION */
-        .about-img { width: 100%; border-radius: 20px; margin: 40px 0; box-shadow: var(--shadow); }
+        .about-img { width: 100%; border-radius: 20px; margin: 40px 0; box-shadow: var(--shadow); display: block; height: auto; }
+
+        /* CTA BUTTONS */
+        .cta-buttons { display: flex; gap: 15px; justify-content: center; margin-top: 25px; }
+        .btn-primary, .btn-outline { 
+            padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem; 
+            cursor: pointer; min-height: 48px; display: inline-flex; align-items: center; justify-content: center;
+        }
+        .btn-primary { background: var(--primary); color: #fff; border: none; }
+        .btn-primary:hover { background: var(--dark); transform: translateY(-2px); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--surface); }
 
         /* FOOTER */
         footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; margin-top: 60px; }
@@ -48,16 +62,29 @@
         .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
         .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
 
-        @media (max-width: 768px) {
-            .about-hero h1 { font-size: 2.2rem; }
+        /* TABLET */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .about-hero h1 { font-size: 2.6rem; }
+            .f-grid { grid-template-columns: 1fr 1fr; }
+        }
+        /* MOBILE */
+        @media (max-width: 767px) {
+            .about-hero { padding: 60px 0; }
+            .about-hero h1 { font-size: 2rem; }
+            .about-hero p { font-size: 1rem; }
+            .about-section h2 { font-size: 1.8rem; }
+            .cta-buttons { flex-direction: column; }
+            .stats-grid { grid-template-columns: 1fr; }
             .f-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <a href="https://search.timeday.net/" class="logo">Search.</a>
         <div class="nav-links">
             <a href="category.html">Insurance</a>
             <a href="category.html">Legal</a>
@@ -79,7 +106,12 @@
             <p>We are a team of financial analysts, legal researchers, and technology enthusiasts dedicated to building a professional search network that bridges the gap between complex data and human understanding.</p>
         </section>
 
-        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000" class="about-img" alt="Our Team">
+        <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1000" 
+             class="about-img" 
+             alt="Our Team collaborating" 
+             loading="lazy" 
+             width="1000" 
+             height="667">
 
         <section class="stats-grid">
             <div class="stat-card">
@@ -106,41 +138,30 @@
         <div style="background: var(--surface); padding: 40px; border-radius: 16px; text-align: center; border: 1px solid var(--border);">
             <h2 style="border:none; padding:0; font-size: 1.8rem;">Ready to find your path?</h2>
             <p>Start your search today or explore our curated categories.</p>
-            <div style="margin-top: 25px; display: flex; gap: 15px; justify-content: center;">
-                <a href="search.html" style="background:var(--primary); color:#fff; padding: 12px 30px; border-radius:50px; font-weight:700;">Start Searching</a>
-                <a href="contact.html" style="border: 2px solid var(--primary); color:var(--primary); padding: 10px 30px; border-radius:50px; font-weight:700;">Contact Us</a>
+            <div class="cta-buttons">
+                <a href="search.html" class="btn-primary">Start Searching</a>
+                <a href="contact.html" class="btn-outline">Contact Us</a>
             </div>
         </div>
     </main>
 
-    <footer>
+   <footer>
         <div class="f-grid">
             <div class="f-col">
-                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
-                <p style="opacity: 0.7; font-size: 0.85rem;">Connecting people to the resources they need for a secure financial future.</p>
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
             </div>
             <div class="f-col">
                 <h4>Solutions</h4>
-                <a href="category.html">Auto Insurance</a>
-                <a href="category.html">Life Insurance</a>
-                <a href="category.html">Health Quotes</a>
+                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
             </div>
             <div class="f-col">
-                <h4>Information</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact Us</a>
-                <a href="search.html">Resource Search</a>
+                <h4>Support</h4>
+                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
             </div>
-            <div class="f-col">
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms & Conditions</a>
-                <a href="disclaimer.html">Disclaimer</a>
-            </div>
+            
         </div>
-        <div class="f-bottom">
-            &copy; 2026 Search.TimeDay Media Network. All Rights Reserved.
-        </div>
+        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
     </footer>
 
 </body>

@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Privacy Policy of Search.TimeDay – learn how we collect, use, and protect your personal information while providing transparent financial and insurance search experiences.">
+    <link rel="canonical" href="https://search.timeday.net/privacy.html">
     <title>Privacy Policy | Search.TimeDay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
@@ -21,11 +24,12 @@
         .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; text-decoration: none; }
         .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
         .nav-links a { color: var(--text); }
+        .nav-links a:hover { color: var(--primary); text-decoration: none; }
 
         /* LEGAL CONTENT LAYOUT */
         .legal-container { max-width: var(--container-narrow); margin: 60px auto; padding: 0 20px; }
         .legal-header { text-align: center; margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
-        .legal-header h1 { font-size: 2.8rem; color: var(--dark); margin-bottom: 15px; }
+        .legal-header h1 { font-size: clamp(2rem, 6vw, 2.8rem); color: var(--dark); margin-bottom: 15px; }
         .last-updated { color: var(--muted); font-size: 0.95rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
         /* TYPOGRAPHY FOR CONTENT */
@@ -41,11 +45,19 @@
         .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; }
         .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; color: #fff; }
         .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
+        .f-col a:hover { color: #fff; text-decoration: underline; }
         .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
 
-        @media (max-width: 768px) {
+        /* RESPONSIVE */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .f-grid { grid-template-columns: 1fr 1fr; }
+        }
+        @media (max-width: 767px) {
             .legal-header h1 { font-size: 2rem; }
+            .legal-body h2 { font-size: 1.4rem; }
             .f-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
         }
     </style>
 </head>
@@ -106,30 +118,22 @@
     <footer>
         <div class="f-grid">
             <div class="f-col">
-                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
-                <p style="opacity: 0.7; font-size: 0.85rem;">Providing transparent financial information and secure search experiences since 2024.</p>
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
             </div>
             <div class="f-col">
                 <h4>Solutions</h4>
-                <a href="category.html">Auto Insurance</a>
-                <a href="category.html">Life Insurance</a>
+                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
             </div>
             <div class="f-col">
                 <h4>Support</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact Us</a>
+                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
             </div>
-            <div class="f-col">
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy Policy</a>
-                <a href="terms.html">Terms of Service</a>
-                <a href="disclaimer.html">Disclaimer</a>
-            </div>
+            
         </div>
-        <div class="f-bottom">
-            &copy; 2026 Search.TimeDay Media Group. All Rights Reserved.
-        </div>
+        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
     </footer>
+
 
 </body>
 </html>

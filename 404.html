@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Oops! The page you're looking for might have been moved or deleted. Let Search.TimeDay help you find the right insurance and financial resources.">
+    <link rel="canonical" href="https://search.timeday.net/404.html">
     <title>404 - Page Not Found | Search.TimeDay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
@@ -22,15 +25,15 @@
         .nav-links a:hover { color: var(--primary); }
 
         /* 404 MAIN CONTENT */
-        main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; }
-        .error-content { max-width: 600px; }
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; position: relative; overflow: hidden; }
+        .error-content { max-width: 600px; position: relative; z-index: 2; }
         .error-code { font-size: 10rem; font-weight: 900; color: var(--surface); line-height: 1; margin-bottom: 10px; background: linear-gradient(to bottom, var(--primary), var(--dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.15; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); z-index: -1; }
-        .error-h1 { font-size: 2.5rem; color: var(--dark); margin-bottom: 15px; font-weight: 800; }
+        .error-h1 { font-size: clamp(1.8rem, 6vw, 2.5rem); color: var(--dark); margin-bottom: 15px; font-weight: 800; }
         .error-p { color: var(--muted); font-size: 1.2rem; margin-bottom: 35px; }
         
         /* ACTIONS */
         .error-actions { display: flex; gap: 15px; justify-content: center; margin-bottom: 50px; }
-        .btn { padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+        .btn { padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; min-height: 48px; display: inline-flex; align-items: center; justify-content: center; }
         .btn-primary { background: var(--primary); color: #fff; border: none; }
         .btn-primary:hover { background: var(--dark); transform: translateY(-2px); box-shadow: var(--shadow); }
         .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
@@ -50,18 +53,26 @@
         .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
         .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
 
-        @media (max-width: 768px) {
-            .error-code { font-size: 6rem; }
+        /* TABLET */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .error-code { font-size: 7rem; }
+            .f-grid { grid-template-columns: 1fr 1fr; }
+        }
+        /* MOBILE */
+        @media (max-width: 767px) {
+            .error-code { font-size: 4.5rem; top: 40%; }
             .error-h1 { font-size: 1.8rem; }
             .error-actions { flex-direction: column; }
             .f-grid { grid-template-columns: 1fr; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <a href="https://search.timeday.net/" class="logo">Search.</a>
         <div class="nav-links">
             <a href="category.html">Insurance</a>
             <a href="category.html">Legal</a>
@@ -95,28 +106,20 @@
     <footer>
         <div class="f-grid">
             <div class="f-col">
-                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
-                <p style="opacity: 0.7; font-size: 0.85rem;">Your professional guide to navigating complex financial and insurance landscapes.</p>
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
             </div>
             <div class="f-col">
-                <h4>Trending</h4>
-                <a href="category.html">Auto Insurance</a>
-                <a href="category.html">Health Quotes</a>
+                <h4>Solutions</h4>
+                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
             </div>
             <div class="f-col">
-                <h4>Quick Links</h4>
-                <a href="about.html">About Us</a>
-                <a href="contact.html">Contact</a>
+                <h4>Support</h4>
+                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
             </div>
-            <div class="f-col">
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-            </div>
+            
         </div>
-        <div class="f-bottom">
-            &copy; 2026 Search.TimeDay Media. All Rights Reserved.
-        </div>
+        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
     </footer>
 
 </body>

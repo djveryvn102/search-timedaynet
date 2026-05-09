@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore expert insurance resources: auto, life, home, health and more. Compare quotes and read verified guides to protect what matters most.">
+    <link rel="canonical" href="https://search.timeday.net/category.html">
     <title>Insurance Resources | Search.TimeDay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
             --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
@@ -14,7 +17,7 @@
         body { background: #fff; color: var(--text); line-height: 1.6; }
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* HEADER ĐỒNG BỘ */
+        /* HEADER */
         nav { height: 75px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
         .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
         .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
@@ -23,10 +26,10 @@
         /* CATEGORY HERO */
         .cat-header { background: var(--surface); padding: 60px 0; border-bottom: 1px solid var(--border); text-align: center; }
         .container { max-width: var(--container); margin: 0 auto; padding: 0 20px; }
-        .cat-header h1 { font-size: 2.8rem; color: var(--dark); margin-bottom: 10px; font-weight: 800; }
+        .cat-header h1 { font-size: clamp(2rem, 5vw, 2.8rem); color: var(--dark); margin-bottom: 10px; font-weight: 800; }
         .cat-header p { color: var(--muted); font-size: 1.1rem; max-width: 600px; margin: 0 auto; }
 
-        /* GRID BÀI VIẾT */
+        /* GRID */
         .grid { 
             display: grid; 
             grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); 
@@ -34,8 +37,7 @@
             margin-top: 50px;
         }
 
-        /* CARD STYLE */
-        .post-item { display: none; } /* Mặc định ẩn để JS xử lý */
+        .post-item { display: none; }
         .post-item.visible { display: block; }
         
         .card { 
@@ -47,14 +49,14 @@
             transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
         .card:hover { transform: translateY(-8px); box-shadow: var(--shadow); border-color: var(--primary); }
-        .card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); }
+        .card img { width: 100%; height: 220px; object-fit: cover; border-bottom: 1px solid var(--border); display: block; }
         .card-content { padding: 25px; }
         .tag { color: var(--primary); font-weight: 800; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.5px; }
         .card h3 { margin: 12px 0; font-size: 1.4rem; color: var(--dark); line-height: 1.3; font-weight: 700; }
         .card p { color: var(--muted); font-size: 0.95rem; margin-bottom: 20px; }
         .read-link { color: var(--primary); font-weight: 700; font-size: 0.9rem; display: flex; align-items: center; gap: 6px; }
 
-        /* NÚT XEM THÊM */
+        /* LOAD MORE BUTTON */
         .load-more-box { text-align: center; margin-top: 60px; }
         .btn-load-more { 
             background: #fff; 
@@ -66,26 +68,47 @@
             cursor: pointer; 
             font-size: 1rem;
             transition: 0.3s;
+            min-height: 48px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
         }
         .btn-load-more:hover { background: var(--primary); color: #fff; box-shadow: 0 4px 15px rgba(26,115,232,0.3); }
 
-        /* FOOTER ĐỒNG BỘ */
+        /* FOOTER */
         footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; margin-top: 100px; }
-        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; }
         .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
         .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 12px; font-size: 0.9rem; }
         .f-bottom { text-align:center; padding-top:40px; border-top:1px solid rgba(255,255,255,0.1); margin-top:40px; opacity:0.5; font-size:0.8rem; }
 
-        @media (max-width: 768px) {
-            .cat-header h1 { font-size: 2rem; }
-            .f-grid { grid-template-columns: 1fr; }
+        /* TABLET */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .grid { 
+                grid-template-columns: repeat(2, 1fr); 
+                gap: 25px; 
+            }
+            .cat-header { padding: 50px 0; }
+            .f-grid { grid-template-columns: 1fr 1fr; }
+        }
+
+        /* MOBILE */
+        @media (max-width: 767px) {
+            .grid { 
+                grid-template-columns: 1fr; 
+                gap: 25px; 
+            }
+            .card img { height: 200px; }
+            .cat-header h1 { font-size: 1.9rem; }
+            .cat-header p { font-size: 1rem; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
         }
     </style>
 </head>
 <body>
-
     <nav>
-        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <a href="https://search.timeday.net/" class="logo">Search.</a>
         <div class="nav-links">
             <a href="category.html">Insurance</a>
             <a href="category.html">Legal</a>
@@ -102,10 +125,9 @@
 
     <main class="container">
         <div class="grid" id="post-grid">
-            
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&w=600" alt="Auto">
+                    <img src="https://images.unsplash.com/photo-1533130061792-64b345e4a833?auto=format&w=600" alt="Auto Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Auto Insurance</span>
                         <h3>5 Ways to Lower Your Car Insurance Premiums</h3>
@@ -117,7 +139,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=600" alt="Home">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=600" alt="Home Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Homeowners</span>
                         <h3>Understanding Replacement Cost Coverage</h3>
@@ -129,7 +151,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&w=600" alt="Business">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&w=600" alt="Business Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Business</span>
                         <h3>The Basics of Professional Liability</h3>
@@ -141,7 +163,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&w=600" alt="Life">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&w=600" alt="Life Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Life Insurance</span>
                         <h3>Term vs. Whole Life: Which fits you?</h3>
@@ -153,7 +175,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&w=600" alt="Health">
+                    <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?auto=format&w=600" alt="Health Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Health</span>
                         <h3>Navigating Medicare Parts A, B, and D</h3>
@@ -165,7 +187,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&w=600" alt="Travel">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&w=600" alt="Travel Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Travel</span>
                         <h3>Is Annual Travel Insurance Worth It?</h3>
@@ -177,7 +199,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&w=600" alt="Tax">
+                    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&w=600" alt="Taxation" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Taxation</span>
                         <h3>Are Insurance Premiums Deductible?</h3>
@@ -189,7 +211,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=600" alt="Renters">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&w=600" alt="Renters Insurance" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Renters</span>
                         <h3>Protection for Your Apartment</h3>
@@ -201,7 +223,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&w=600" alt="Fleet">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?auto=format&w=600" alt="Commercial Fleet" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Commercial</span>
                         <h3>Commercial Fleet Safety Tech</h3>
@@ -213,7 +235,7 @@
 
             <a href="post.html" class="post-item">
                 <article class="card">
-                    <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&w=600" alt="Finance">
+                    <img src="https://images.unsplash.com/photo-1633158829585-23ba8f7c8caf?auto=format&w=600" alt="Umbrella Policy" loading="lazy" width="600" height="220">
                     <div class="card-content">
                         <span class="tag">Legal</span>
                         <h3>What is an Umbrella Policy?</h3>
@@ -222,7 +244,6 @@
                     </div>
                 </article>
             </a>
-
         </div>
 
         <div class="load-more-box" id="load-more-container">
@@ -230,28 +251,23 @@
         </div>
     </main>
 
-    <footer>
+   <footer>
         <div class="f-grid">
             <div class="f-col">
-                <a href="https://search.timeday.net/" class="logo" style="color:#fff;">Search.TimeDay</a>
-                <p style="opacity: 0.7; font-size: 0.85rem; margin-top:15px;">Professional media network for insurance and financial search solutions.</p>
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
             </div>
             <div class="f-col">
                 <h4>Solutions</h4>
-                <a href="category.html">Auto Quotes</a><a href="category.html">Life Insurance</a>
+                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
             </div>
             <div class="f-col">
-                <h4>Company</h4>
-                <a href="about.html">About Us</a><a href="contact.html">Contact</a>
+                <h4>Support</h4>
+                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
             </div>
-            <div class="f-col">
-                <h4>Legal</h4>
-                <a href="privacy.html">Privacy</a><a href="terms.html">Terms</a>
-            </div>
+            
         </div>
-        <div class="f-bottom">
-            &copy; 2026 Search.TimeDay. All Rights Reserved.
-        </div>
+        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
     </footer>
 
     <script>
@@ -260,11 +276,9 @@
         const loadMoreBtn = document.getElementById('load-more-container');
 
         function initCategory() {
-            // Hiển thị tối đa 6 bài đầu tiên
             for (let i = 0; i < maxVisible; i++) {
                 if (posts[i]) posts[i].classList.add('visible');
             }
-            // Nếu tổng bài viết ít hơn hoặc bằng 6, ẩn nút Xem thêm
             if (posts.length <= maxVisible) {
                 loadMoreBtn.style.display = 'none';
             }
@@ -272,10 +286,9 @@
 
         function showAllPosts() {
             posts.forEach(post => post.classList.add('visible'));
-            loadMoreBtn.style.display = 'none'; // Ẩn nút sau khi đã hiện hết
+            loadMoreBtn.style.display = 'none';
         }
 
-        // Chạy khi trang tải xong
         window.onload = initCategory;
     </script>
 </body>
