@@ -57,6 +57,88 @@
             .f-grid { grid-template-columns: 1fr; }
             .search-header h1 { font-size: 1.8rem; }
         }
+
+        /* --- TỐI ƯU QUẢNG CÁO GOOGLE ADS (CSE) ĐỂ THU HÚT HƠN --- */
+
+/* 1. Khung tổng thể của từng khối quảng cáo */
+.gsc-webResult.gsc-result.gsc-promotion {
+    background-color: #fffdf5 !important; /* Màu nền vàng kem cực nhẹ để tạo sự chú ý tinh tế */
+    border: 1px solid #ffeeba !important; /* Viền tiệp màu với nền */
+    padding: 20px !important; /* Tạo khoảng trống rộng rãi */
+    border-radius: 12px !important;
+    margin-bottom: 25px !important;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05) !important;
+    transition: all 0.3s ease;
+}
+
+.gsc-webResult.gsc-result.gsc-promotion:hover {
+    border-color: #ef7d00 !important; /* Màu cam khi rê chuột vào */
+    background-color: #ffffff !important;
+    transform: translateY(-2px);
+}
+
+/* 2. Tiêu đề quảng cáo: TO, ĐẬM, RÕ theo Title Case */
+.gs-promotion .gs-title, 
+.gs-promotion .gs-title * {
+    color: #1a0dab !important; /* Màu xanh chuẩn của Google Ads */
+    font-size: 1.4rem !important; /* Chữ to rõ ràng */
+    font-weight: 700 !important; /* Chữ siêu đậm */
+    text-decoration: none !important;
+    line-height: 1.3 !important;
+}
+
+.gs-promotion .gs-title:hover, 
+.gs-promotion .gs-title *:hover {
+    text-decoration: underline !important;
+}
+
+/* 3. Đoạn mô tả (Snippet) của quảng cáo */
+.gs-promotion .gs-snippet {
+    color: #4d5156 !important; /* Màu xám đen dễ đọc */
+    font-size: 1.1rem !important;
+    line-height: 1.6 !important;
+    margin-top: 10px !important;
+}
+
+/* 4. Link URL hiển thị */
+.gs-promotion .gs-visibleUrl {
+    color: #006621 !important; /* Màu xanh lá truyền thống của quảng cáo */
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+}
+
+/* 5. Tùy chỉnh nhãn "Sponsored" (Quảng cáo) */
+.gs-promotion .gs-promotion-title-lbl {
+    display: inline-block;
+    background: #e8f0fe;
+    color: #1967d2;
+    padding: 2px 8px;
+    border-radius: 4px;
+    margin-right: 12px;
+    font-size: 0.85rem;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* 6. Các liên kết phụ (Site Links) bên dưới quảng cáo */
+.gs-promotion .gs-activePromotion .gs-sp-line a {
+    color: #1a0dab !important;
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+    margin-right: 15px;
+}
+
+/* Tùy chỉnh kết quả tìm kiếm tự nhiên để đồng bộ */
+.gsc-webResult.gsc-result:not(.gsc-promotion) {
+    padding: 15px 0 !important;
+    border-bottom: 1px solid var(--surface) !important;
+}
+
+.gs-webResult .gs-title, .gs-webResult .gs-title * {
+    color: var(--primary) !important;
+    font-size: 1.25rem !important;
+    font-weight: 700 !important;
+}
     </style>
 </head>
 <body>
