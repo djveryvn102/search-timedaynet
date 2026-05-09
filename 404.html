@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Page Not Found | Search.TimeDay</title>
+    <style>
+        :root {
+            --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
+            --muted: #5f6368; --bg: #ffffff; --border: #dadce0;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --container: 1140px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; display: flex; flex-direction: column; min-height: 100vh; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* HEADER */
+        nav { height: 75px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* 404 MAIN CONTENT */
+        main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 60px 20px; text-align: center; }
+        .error-content { max-width: 600px; }
+        .error-code { font-size: 10rem; font-weight: 900; color: var(--surface); line-height: 1; margin-bottom: 10px; background: linear-gradient(to bottom, var(--primary), var(--dark)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; opacity: 0.15; position: absolute; left: 50%; top: 45%; transform: translate(-50%, -50%); z-index: -1; }
+        .error-h1 { font-size: 2.5rem; color: var(--dark); margin-bottom: 15px; font-weight: 800; }
+        .error-p { color: var(--muted); font-size: 1.2rem; margin-bottom: 35px; }
+        
+        /* ACTIONS */
+        .error-actions { display: flex; gap: 15px; justify-content: center; margin-bottom: 50px; }
+        .btn { padding: 14px 30px; border-radius: 50px; font-weight: 700; font-size: 1rem; cursor: pointer; }
+        .btn-primary { background: var(--primary); color: #fff; border: none; }
+        .btn-primary:hover { background: var(--dark); transform: translateY(-2px); box-shadow: var(--shadow); }
+        .btn-outline { background: transparent; color: var(--primary); border: 2px solid var(--primary); }
+        .btn-outline:hover { background: var(--surface); }
+
+        /* SUGGESTED LINKS */
+        .suggested { border-top: 1px solid var(--border); padding-top: 30px; }
+        .suggested h3 { font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 20px; }
+        .link-grid { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+        .link-grid a { font-weight: 600; color: var(--primary); font-size: 0.95rem; }
+        .link-grid a:hover { text-decoration: underline; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; text-align: left; }
+        .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+
+        @media (max-width: 768px) {
+            .error-code { font-size: 6rem; }
+            .error-h1 { font-size: 1.8rem; }
+            .error-actions { flex-direction: column; }
+            .f-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <div class="nav-links">
+            <a href="category.html">Insurance</a>
+            <a href="category.html">Legal</a>
+            <a href="search.html">Search</a>
+        </div>
+    </nav>
+
+    <main>
+        <div class="error-code">404</div>
+        <div class="error-content">
+            <h1 class="error-h1">Looking for something?</h1>
+            <p class="error-p">The page you're looking for might have been moved, deleted, or perhaps it never existed. Let's get you back on track.</p>
+            
+            <div class="error-actions">
+                <a href="https://search.timeday.net/" class="btn btn-primary">Return Home</a>
+                <a href="search.html" class="btn btn-outline">Search Topics</a>
+            </div>
+
+            <div class="suggested">
+                <h3>Try one of these instead:</h3>
+                <div class="link-grid">
+                    <a href="category.html">Auto Insurance</a>
+                    <a href="category.html">Life Quotes</a>
+                    <a href="category.html">Legal Guides</a>
+                    <a href="about.html">About Us</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
+                <p style="opacity: 0.7; font-size: 0.85rem;">Your professional guide to navigating complex financial and insurance landscapes.</p>
+            </div>
+            <div class="f-col">
+                <h4>Trending</h4>
+                <a href="category.html">Auto Insurance</a>
+                <a href="category.html">Health Quotes</a>
+            </div>
+            <div class="f-col">
+                <h4>Quick Links</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="f-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Search.TimeDay Media. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

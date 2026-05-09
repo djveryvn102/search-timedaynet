@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results | Search.TimeDay</title>
+    <style>
+        :root {
+            --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
+            --muted: #5f6368; --bg: #ffffff; --surface: #f8f9fa;
+            --border: #dadce0; --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --container: 1140px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.2s; }
+
+        /* HEADER */
+        nav { height: 75px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* SEARCH PAGE MAIN */
+        .search-container { max-width: var(--container); margin: 40px auto; padding: 0 20px; min-height: 70vh; }
+        .search-header { margin-bottom: 30px; border-bottom: 2px solid var(--surface); padding-bottom: 20px; }
+        .search-header h1 { font-size: 2.2rem; color: var(--dark); font-weight: 800; }
+        
+        /* CẤU TRÌNH TỐI ƯU CHO GOOGLE CSE */
+        .search-results-box {
+            background: #fff;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow);
+        }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; margin-top: 80px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; }
+        .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+
+        /* TÙY CHỈNH GIAO DIỆN GOOGLE CSE ĐỂ ĐỒNG BỘ MÀU SẮC */
+        .gsc-control-cse { padding: 0 !important; border: none !important; }
+        .gs-title { color: var(--primary) !important; font-weight: 700 !important; font-size: 1.2rem !important; }
+        .gs-snippet { color: var(--muted) !important; line-height: 1.5 !important; }
+        .gsc-results .gsc-cursor-box .gsc-cursor-page { 
+            background: var(--surface) !important; 
+            border: 1px solid var(--border) !important; 
+            border-radius: 4px !important;
+            padding: 5px 10px !important;
+        }
+        
+        @media (max-width: 768px) {
+            .f-grid { grid-template-columns: 1fr; }
+            .search-header h1 { font-size: 1.8rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <div class="nav-links">
+            <a href="category.html">Insurance</a>
+            <a href="category.html">Legal</a>
+            <a href="search.html">Search</a>
+        </div>
+    </nav>
+
+    <main class="search-container">
+        <header class="search-header">
+            <h1>Search Resources</h1>
+            <p style="color: var(--muted);">Find the best quotes and expert guidance across our network.</p>
+        </header>
+
+        <div class="search-results-box">
+            <script async src="https://cse.google.com/cse.js?cx=5049fa08ffab28b5a"></script>
+            <div class="gcse-search"></div>
+            
+            <div id="search-placeholder" style="display:none; padding: 20px 0;">
+                <p style="color: var(--muted);">Loading specialized results for you...</p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
+                <p style="opacity: 0.7; font-size: 0.85rem;">Professional media network providing high-fidelity search experiences for insurance and finance.</p>
+            </div>
+            <div class="f-col">
+                <h4>Trending</h4>
+                <a href="category.html">Auto Insurance</a>
+                <a href="category.html">Life Quotes</a>
+                <a href="category.html">Legal Aid</a>
+            </div>
+            <div class="f-col">
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+            <div class="f-col">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="disclaimer.html">Ad Disclosure</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Search.TimeDay. All Rights Reserved. Results powered by Google Custom Search.
+        </div>
+    </footer>
+
+</body>
+</html>

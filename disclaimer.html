@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disclaimer | Search.TimeDay</title>
+    <style>
+        :root {
+            --primary: #1a73e8; --dark: #002e4d; --text: #1a1a1b; 
+            --muted: #5f6368; --bg: #ffffff; --surface: #f8f9fa;
+            --border: #dadce0; --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --container-narrow: 800px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.8; }
+        a { text-decoration: none; color: var(--primary); transition: 0.3s; }
+        a:hover { text-decoration: underline; }
+
+        /* HEADER */
+        nav { height: 75px; display: flex; justify-content: space-between; align-items: center; padding: 0 8%; border-bottom: 1px solid var(--border); background: #fff; position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; text-decoration: none; }
+        .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a { color: var(--text); }
+
+        /* LEGAL CONTENT LAYOUT */
+        .legal-container { max-width: var(--container-narrow); margin: 60px auto; padding: 0 20px; }
+        .legal-header { text-align: center; margin-bottom: 50px; padding-bottom: 40px; border-bottom: 1px solid var(--border); }
+        .legal-header h1 { font-size: 2.8rem; color: var(--dark); margin-bottom: 15px; font-weight: 800; }
+        .last-updated { color: var(--muted); font-size: 0.9rem; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+
+        /* TYPOGRAPHY FOR CONTENT */
+        .legal-body h2 { font-size: 1.6rem; color: var(--dark); margin: 40px 0 20px; font-weight: 700; display: flex; align-items: center; gap: 10px; }
+        .legal-body p { margin-bottom: 20px; color: #333; font-size: 1.05rem; }
+        
+        .disclaimer-card { background: #fff4f4; border: 1px solid #f5c6cb; padding: 30px; border-radius: 12px; margin: 30px 0; }
+        .disclaimer-card h3 { color: #721c24; margin-bottom: 15px; font-size: 1.2rem; }
+        .disclaimer-card p { color: #721c24; margin-bottom: 0; font-size: 1rem; }
+
+        /* FOOTER */
+        footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; margin-top: 80px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; }
+        .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; color: #fff; }
+        .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; text-decoration: none; }
+        .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+
+        @media (max-width: 768px) {
+            .legal-header h1 { font-size: 2.2rem; }
+            .f-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <div class="nav-links">
+            <a href="category.html">Insurance</a>
+            <a href="category.html">Legal</a>
+            <a href="search.html">Search</a>
+        </div>
+    </nav>
+
+    <main class="legal-container">
+        <header class="legal-header">
+            <p class="last-updated">Last Modified: May 9, 2026</p>
+            <h1>Disclaimer</h1>
+        </header>
+
+        <div class="legal-body">
+            <div class="disclaimer-card">
+                <h3>⚠️ Professional Disclaimer</h3>
+                <p>The information provided by <strong>Search.TimeDay</strong> is for general informational purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site.</p>
+            </div>
+
+            <h2>1. No Professional Advice</h2>
+            <p>The site cannot and does not contain insurance, legal, or financial advice. The information is provided for general informational and educational purposes only and is not a substitute for professional advice.</p>
+            <p>Accordingly, before taking any actions based upon such information, we encourage you to consult with the appropriate professionals. The use or reliance of any information contained on this site is solely at your own risk.</p>
+
+            <h2>2. External Links Disclaimer</h2>
+            <p>The site may contain (or you may be sent through the site) links to other websites or content belonging to or originating from third parties. Such external links are not investigated, monitored, or checked for accuracy, adequacy, validity, reliability, availability or completeness by us.</p>
+
+            <h2>3. Advertising & Affiliates Disclaimer</h2>
+            <p>This site may contain links to affiliate websites, and we receive an affiliate commission for any purchases or actions made by you on the affiliate website using such links. Our affiliates include Google AdSense and other advertising networks.</p>
+            <p>We are a participant in the Google Custom Search Ads program, an advertising program designed to provide a means for us to earn advertising fees by linking to search results and affiliated sites.</p>
+
+            <h2>4. Errors and Omissions Disclaimer</h2>
+            <p>While we have made every attempt to ensure that the information contained in this site has been obtained from reliable sources, Search.TimeDay is not responsible for any errors or omissions, or for the results obtained from the use of this information.</p>
+
+            <h2>5. "Use at Your Own Risk" Disclaimer</h2>
+            <p>All information in the site is provided "as is", with no guarantee of completeness, accuracy, timeliness or of the results obtained from the use of this information, and without warranty of any kind, express or implied, including, but not limited to warranties of performance, merchantability, and fitness for a particular purpose.</p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
+                <p style="opacity: 0.7; font-size: 0.85rem;">Providing expert-led search experiences in the insurance and financial sectors.</p>
+            </div>
+            <div class="f-col">
+                <h4>Trending</h4>
+                <a href="category.html">Auto Insurance</a>
+                <a href="category.html">Life Insurance</a>
+            </div>
+            <div class="f-col">
+                <h4>Support</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="f-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Search.TimeDay Media Network. All Rights Reserved.
+        </div>
+    </footer>
+
+</body>
+</html>

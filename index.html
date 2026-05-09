@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search.TimeDay - Professional Search & Resource Network</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #1a73e8;
+            --dark: #002e4d;
+            --text: #1a1a1b;
+            --muted: #5f6368;
+            --bg: #ffffff;
+            --surface: #f8f9fa;
+            --border: #dadce0;
+            --shadow: 0 4px 12px rgba(0,0,0,0.08);
+            --container: 1140px;
+        }
+
+        /* RESET & BASE */
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', sans-serif; color: var(--text); background: var(--bg); line-height: 1.6; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* HEADER (GIỮ NGUYÊN CẤU TRÚC CŨ) */
+        nav { 
+            height: 75px; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 0 8%; 
+            border-bottom: 1px solid var(--border); 
+            background: #fff; 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+        .nav-links { display: flex; gap: 25px; font-weight: 600; font-size: 0.95rem; }
+        .nav-links a:hover { color: var(--primary); }
+
+        /* HERO SECTION (BỐ CỤC MỚI) */
+        .hero { 
+            padding: 100px 20px; 
+            text-align: center;
+            background: radial-gradient(circle at center, #f0f7ff 0%, #fff 100%);
+        }
+        .hero h1 { font-size: 3.2rem; font-weight: 800; color: var(--dark); margin-bottom: 20px; letter-spacing: -1px; }
+        .hero p { font-size: 1.2rem; color: var(--muted); max-width: 700px; margin: 0 auto 40px; }
+
+        /* SEARCH BOX (NHẢY QUA SEARCH.HTML?Q=...) */
+        .search-wrapper { 
+            max-width: 720px; 
+            margin: 0 auto; 
+            background: #fff; 
+            padding: 8px;
+            border-radius: 100px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1); 
+            display: flex; 
+            border: 1px solid var(--border);
+        }
+        .search-wrapper input { 
+            flex: 1; 
+            border: none; 
+            padding: 0 25px; 
+            font-size: 1.1rem; 
+            outline: none; 
+            border-radius: 100px;
+            font-family: inherit;
+        }
+        .search-wrapper button { 
+            background: var(--primary); 
+            color: #fff; 
+            border: none; 
+            padding: 14px 35px; 
+            border-radius: 100px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .search-wrapper button:hover { background: var(--dark); }
+
+        /* CATEGORY SECTION (DẠNG CARD) */
+        .categories-container { max-width: var(--container); margin: 80px auto; padding: 0 20px; }
+        .section-title { font-size: 1.8rem; font-weight: 800; color: var(--dark); margin-bottom: 40px; }
+
+        .cat-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); 
+            gap: 20px; 
+            max-height: 480px; /* Hiển thị khoảng 4 hàng */
+            overflow: hidden; 
+            position: relative; 
+            transition: max-height 0.6s ease;
+        }
+        
+        /* Hiệu ứng mờ dần để báo hiệu còn nội dung */
+        .cat-grid::after {
+            content: ""; 
+            position: absolute; 
+            bottom: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 120px;
+            background: linear-gradient(to bottom, transparent, #ffffff);
+            pointer-events: none; 
+            transition: 0.3s;
+        }
+        .cat-grid.expanded { max-height: 2000px; }
+        .cat-grid.expanded::after { opacity: 0; }
+
+        .cat-card { 
+            background: #fff; 
+            border: 1px solid var(--border); 
+            padding: 25px; 
+            border-radius: 16px; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 12px; 
+            transition: 0.3s;
+            cursor: pointer;
+        }
+        .cat-card:hover { border-color: var(--primary); box-shadow: var(--shadow); transform: translateY(-3px); }
+        .icon-circle { 
+            width: 50px; 
+            height: 50px; 
+            background: var(--surface); 
+            border-radius: 12px; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            font-size: 1.4rem; 
+        }
+        .cat-card h4 { font-size: 1.1rem; font-weight: 700; color: var(--dark); }
+        .cat-card p { font-size: 0.85rem; color: var(--muted); margin: 0; }
+
+        .btn-center { text-align: center; margin-top: 40px; }
+        .btn-outline { 
+            background: transparent; 
+            border: 2px solid var(--primary); 
+            color: var(--primary);
+            padding: 12px 35px; 
+            border-radius: 50px; 
+            font-weight: 700; 
+            cursor: pointer; 
+            transition: 0.3s;
+        }
+        .btn-outline:hover { background: var(--primary); color: #fff; }
+
+        /* FOOTER (GIỮ NGUYÊN CẤU TRÚC CŨ) */
+        footer { background: var(--dark); color: #fff; padding: 60px 8% 30px; margin-top: 80px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; max-width: 1140px; margin: 0 auto; }
+        .f-col h4 { margin-bottom: 20px; font-size: 1.1rem; }
+        .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
+        .f-col a:hover { color: #fff; }
+        .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.2rem; }
+            .f-grid { grid-template-columns: 1fr; }
+            .search-wrapper { flex-direction: column; border-radius: 20px; padding: 15px; }
+            .search-wrapper button { margin-top: 10px; width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+        <div class="nav-links">
+            <a href="category.html">Insurance</a>
+            <a href="category.html">Legal</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Support</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Find Smarter Financial Solutions</h1>
+        <p>Your professional gateway to insurance quotes, legal resources, and expert financial insights.</p>
+        
+        <form action="search.html" method="GET" class="search-wrapper">
+            <input 
+                type="text" 
+                name="q" 
+                placeholder="Search for auto, life, or home insurance..." 
+                required
+            >
+            <button type="submit">Search Now</button>
+        </form>
+    </section>
+
+    <main class="categories-container">
+        <h2 class="section-title">Explore by Category</h2>
+        <div class="cat-grid" id="categoryGrid">
+            <a href="category.html" class="cat-card">
+                <div class="icon-circle">🚗</div>
+                <h4>Auto Insurance</h4>
+                <p>Compare quotes and save on premiums.</p>
+            </a>
+            <a href="category.html" class="cat-card">
+                <div class="icon-circle">🏠</div>
+                <h4>Homeowners</h4>
+                <p>Protect your most valuable asset.</p>
+            </a>
+            <a href="category.html" class="cat-card">
+                <div class="icon-circle">❤️</div>
+                <h4>Life Insurance</h4>
+                <p>Security for your family's future.</p>
+            </a>
+            <a href="category.html" class="cat-card">
+                <div class="icon-circle">🏥</div>
+                <h4>Health Care</h4>
+                <p>Medical plans for every lifestyle.</p>
+            </a>
+            <a href="category.html" class="cat-card"><div class="icon-circle">💼</div><h4>Business</h4><p>Commercial risk management.</p></a>
+            <a href="category.html" class="cat-card"><div class="icon-circle">⚖️</div><h4>Legal Aid</h4><p>Resources for legal assistance.</p></a>
+            <a href="category.html" class="cat-card"><div class="icon-circle">📉</div><h4>Finance</h4><p>Investment and savings tools.</p></a>
+            <a href="category.html" class="cat-card"><div class="icon-circle">✈️</div><h4>Travel</h4><p>Safety for your global trips.</p></a>
+            <div class="cat-card"><div class="icon-circle">🐾</div><h4>Pet Care</h4><p>Insurance for furry friends.</p></div>
+            <div class="cat-card"><div class="icon-circle">🏗️</div><h4>Liability</h4><p>Professional protection plans.</p></div>
+            <div class="cat-card"><div class="icon-circle">📱</div><h4>Cyber</h4><p>Digital identity security.</p></div>
+            <div class="cat-card"><div class="icon-circle">🎓</div><h4>Education</h4><p>Tuition and student resources.</p></div>
+            <div class="cat-card"><div class="icon-circle">💰</div><h4>Taxation</h4><p>Tax planning and guides.</p></div>
+            <div class="cat-card"><div class="icon-circle">🚜</div><h4>Agriculture</h4><p>Farming and crop solutions.</p></div>
+            <div class="cat-card"><div class="icon-circle">🚲</div><h4>E-Bike</h4><p>Commuter liability cover.</p></div>
+            <div class="cat-card"><div class="icon-circle">🚑</div><h4>Disability</h4><p>Income protection guides.</p></div>
+            <div class="cat-card"><div class="icon-circle">🏦</div><h4>Banking</h4><p>Savings and loan resources.</p></div>
+            <div class="cat-card"><div class="icon-circle">💍</div><h4>Valuables</h4><p>Art and jewelry protection.</p></div>
+            <div class="cat-card"><div class="icon-circle">🚢</div><h4>Marine</h4><p>Boats and cargo insurance.</p></div>
+            <div class="cat-card"><div class="icon-circle">🌴</div><h4>Retirement</h4><p>Pension and annuity plans.</p></div>
+        </div>
+
+        <div class="btn-center">
+            <button class="btn-outline" id="loadMoreBtn">Show All Categories</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
+                <p style="opacity: 0.7; font-size: 0.85rem;">Connecting people to the resources they need for a secure financial future.</p>
+            </div>
+            <div class="f-col">
+                <h4>Solutions</h4>
+                <a href="category.html">Auto Insurance</a>
+                <a href="category.html">Life Insurance</a>
+            </div>
+            <div class="f-col">
+                <h4>Support</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+            <div class="f-col">
+                <h4>Legal</h4>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
+        </div>
+        <div class="f-bottom">
+            &copy; 2026 Search.TimeDay Media Group. All Rights Reserved.
+        </div>
+    </footer>
+
+    <script>
+        const btn = document.getElementById('loadMoreBtn');
+        const grid = document.getElementById('categoryGrid');
+
+        btn.addEventListener('click', () => {
+            grid.classList.toggle('expanded');
+            if (grid.classList.contains('expanded')) {
+                btn.textContent = 'Show Less';
+            } else {
+                btn.textContent = 'Show All Categories';
+                // Cuộn mượt về đầu danh sách khi thu gọn
+                window.scrollTo({ 
+                    top: grid.offsetTop - 100, 
+                    behavior: 'smooth' 
+                });
+            }
+        });
+    </script>
+</body>
+</html>

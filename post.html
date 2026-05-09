@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navigating Insurance Policies: Tips and Guides | Search.TimeDay</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a73e8; 
+            --dark: #002e4d; 
+            --text: #1a1a1b; 
+            --muted: #5f6368; 
+            --bg: #ffffff; 
+            --surface: #f8f9fa;
+            --border: #dadce0; 
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+            --container-article: 850px;
+            --accent-orange: #ef7d00;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
+        body { background: var(--bg); color: var(--text); line-height: 1.8; }
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- HEADER --- */
+        nav { 
+            height: 75px; display: flex; justify-content: space-between; align-items: center; 
+            padding: 0 8%; border-bottom: 1px solid var(--border); background: #fff; 
+            position: sticky; top: 0; z-index: 1000; 
+        }
+        .logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); letter-spacing: -1px; }
+
+        /* --- ARTICLE LAYOUT --- */
+        .article-container { max-width: var(--container-article); margin: 40px auto; padding: 0 20px; }
+
+        .post-body h1 { font-size: 2.8rem; font-weight: 800; color: var(--dark); line-height: 1.2; margin-bottom: 25px; }
+        .post-body p { margin-bottom: 20px; font-size: 1.15rem; color: #3c4043; }
+
+        /* --- RSOC BOX (FIX: KHUNG TO, CHỮ SIÊU ĐẬM) --- */
+        .rsoc-box { 
+            background: #fff; border-radius: 16px; padding: 30px; 
+            box-shadow: 0 15px 45px rgba(0,0,0,0.1); margin: 45px 0;
+            border: 1px solid rgba(0,0,0,0.06);
+        }
+        .rsoc-title { font-size: 1.4rem; color: var(--muted); margin-bottom: 25px; font-weight: 500; }
+        .rsoc-list { display: flex; flex-direction: column; gap: 12px; }
+        
+        .rsoc-item { 
+            background: var(--primary); color: #fff; 
+            padding: 20px 25px; border-radius: 10px; display: flex; justify-content: space-between; 
+            align-items: center; font-size: 1.25rem; font-weight: 700; /* Fix: Font-weight 700 */
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        /* Fix: Màu cam khi rê chuột */
+        .rsoc-item:hover { 
+            background: var(--accent-orange); 
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(239, 125, 0, 0.3);
+        }
+        .rsoc-text-content { display: flex; align-items: center; gap: 15px; }
+        .rsoc-arrow { font-size: 1.3rem; opacity: 0.9; }
+
+        /* --- RELATED ARTICLES (NEW LAYOUT) --- */
+        .related-section { margin-top: 80px; padding-top: 40px; border-top: 1px solid var(--border); }
+        .related-title { font-size: 1.8rem; font-weight: 800; color: var(--dark); margin-bottom: 30px; }
+        .related-grid { 
+            display: grid; 
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 20px; 
+        }
+        .related-card { 
+            background: #fff; border-radius: 12px; overflow: hidden; 
+            border: 1px solid var(--border); transition: 0.3s;
+            display: flex; flex-direction: column;
+        }
+        .related-card:hover { transform: translateY(-5px); box-shadow: var(--shadow); border-color: var(--primary); }
+        .related-img { width: 100%; height: 150px; background: #eee; object-fit: cover; }
+        .related-info { padding: 15px; flex-grow: 1; }
+        .related-info h4 { font-size: 1.1rem; font-weight: 700; color: var(--dark); margin-bottom: 10px; line-height: 1.4; }
+        .related-info p { font-size: 0.9rem; color: var(--muted); margin: 0; line-height: 1.5; }
+
+        /* --- FOOTER CŨ (4 CỘT) --- */
+        footer { background: var(--dark); color: #fff; padding: 70px 8% 40px; margin-top: 80px; }
+        .f-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 50px; max-width: 1200px; margin: 0 auto; }
+        .f-col h4 { font-size: 1.2rem; margin-bottom: 20px; color: #fff; font-weight: 700; }
+        .f-col a { display: block; color: #bdc3c7; margin-bottom: 12px; font-size: 0.95rem; }
+        .f-col a:hover { color: var(--primary); }
+        .f-bottom { margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); text-align: center; color: #7f8c8d; font-size: 0.9rem; }
+
+        @media (max-width: 768px) {
+            .f-grid { grid-template-columns: 1fr 1fr; }
+            .related-grid { grid-template-columns: 1fr; }
+            .post-body h1 { font-size: 2.1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="https://search.timeday.net/" class="logo">Search.TimeDay</a>
+    </nav>
+
+    <main class="article-container">
+        <article class="post-body">
+            <h1>Expert Insights on Financial and Legal Strategies</h1>
+            <p>Navigating the complex landscape of 2026 requires up-to-date information and reliable resources. Here are the most relevant topics today:</p>
+            
+            <div class="rsoc-box">
+                <div class="rsoc-title">Related searches</div>
+                <div class="rsoc-list rsoc-placeholder"></div>
+            </div>
+
+            <p>From mortgage rates in Texas to legal advice in California, our network provides the clarity you need to make informed decisions.</p>
+
+            <div class="rsoc-box">
+                <div class="rsoc-title">More Resources</div>
+                <div class="rsoc-list rsoc-placeholder"></div>
+            </div>
+
+            <div class="related-section">
+                <h3 class="related-title">Related Articles</h3>
+                <div class="related-grid">
+                    <a href="#" class="related-card">
+                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=400" class="related-img" alt="Mortgage">
+                        <div class="related-info">
+                            <h4>Mortgage Trends for 2026</h4>
+                            <p>Discover how interest rates are affecting new homebuyers this year...</p>
+                        </div>
+                    </a>
+                    <a href="#" class="related-card">
+                        <img src="https://images.unsplash.com/photo-1505664194779-8beaceb93744?w=400" class="related-img" alt="Legal">
+                        <div class="related-info">
+                            <h4>New Legal Regulations</h4>
+                            <p>A comprehensive guide to recent changes in business law and compliance...</p>
+                        </div>
+                    </a>
+                    <a href="#" class="related-card">
+                        <img src="https://images.unsplash.com/photo-1554224155-1696413565d3?w=400" class="related-img" alt="Tax">
+                        <div class="related-info">
+                            <h4>Tax Relief Strategies</h4>
+                            <p>Proven methods to manage and reduce your business tax burden effectively...</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </article>
+    </main>
+
+    <footer>
+        <div class="f-grid">
+            <div class="f-col">
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
+                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
+            </div>
+            <div class="f-col">
+                <h4>Solutions</h4>
+                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
+            </div>
+            <div class="f-col">
+                <h4>Support</h4>
+                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
+            </div>
+            <div class="f-col">
+                <h4>Network</h4>
+                <a href="#">Partners</a><a href="#">Resources</a><a href="#">Updates</a><a href="#">Services</a>
+            </div>
+        </div>
+        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
+    </footer>
+
+    <script>
+        const keyList = [
+            "top rated mortgage in Texas", "reliable inventory management with bad credit",
+            "medical malpractice in 2026 in Pennsylvania", "specialized business credit card in Ohio",
+            "best rates for dental implants for families", "personal injury lawyer for seniors in Georgia",
+            "specialized health insurance in New York", "physical therapy for seniors in North Carolina",
+            "specialized CRM software in North Carolina", "best tax relief in Michigan",
+            "affordable rehab center in Georgia", "affordable health insurance in New York",
+            "cost of immigration consultant for seniors", "affordable cloud hosting in Ohio",
+            "certified inventory management in 2026", "expert mortgage with bad credit",
+            "best immigration consultant in Texas", "top rated cloud hosting in New York",
+            "low interest mortgage in Pennsylvania", "debt consolidation in 2026 in North Carolina",
+            "reliable CRM software in 2026", "medical malpractice for families in Pennsylvania",
+            "legal advice for dental implants near me", "debt consolidation with bad credit in Michigan",
+            "legal advice for business credit card for small business", "bankruptcy lawyer with bad credit in California",
+            "health insurance with bad credit in North Carolina", "cost of immigration consultant for small business",
+            "specialized debt consolidation in North Carolina", "specialized business credit card in North Carolina",
+            "certified inventory management with bad credit", "specialized physical therapy in Michigan",
+            "dental implants with bad credit in Texas", "health insurance with bad credit in Michigan",
+            "physical therapy near me in Illinois", "debt consolidation for small business in New York",
+            "specialized mortgage in New York", "best rates for physical therapy near me",
+            "specialized tax relief in California", "affordable personal injury lawyer in North Carolina",
+            "best rates for medical malpractice near me", "senior home care near me in Texas",
+            "specialized payroll system in North Carolina"
+        ];
+
+        // 1. Hàm Title Case (Viết hoa chữ cái đầu của mỗi từ)
+        function toTitleCase(str) {
+            return str.toLowerCase().split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ');
+        }
+
+        // 2. Format Link chuẩn q=Insurance+Car
+        function formatLink(str) {
+            const titleStr = toTitleCase(str);
+            const query = titleStr.split(' ').join('+');
+            return `search.html?q=${query}`;
+        }
+
+        function generateRSOC() {
+            // Xáo trộn mảng tổng 1 lần duy nhất để không trùng lặp
+            const shuffled = [...keyList].sort(() => 0.5 - Math.random());
+            const containers = document.querySelectorAll('.rsoc-placeholder');
+
+            let startIndex = 0;
+            const size = 6; // Số lượng key mỗi box
+
+            containers.forEach(container => {
+                const selected = shuffled.slice(startIndex, startIndex + size);
+                startIndex += size;
+
+                container.innerHTML = ''; 
+                selected.forEach(key => {
+                    const title = toTitleCase(key);
+                    const url = formatLink(key);
+                    
+                    container.innerHTML += `
+                        <a href="${url}" class="rsoc-item">
+                            <div class="rsoc-text-content">
+                                <span class="rsoc-arrow">&#10095;</span>
+                                <span>${title}</span>
+                            </div>
+                            <span class="rsoc-arrow">&#10095;</span>
+                        </a>
+                    `;
+                });
+            });
+        }
+
+        window.onload = generateRSOC;
+    </script>
+</body>
+</html>
