@@ -14,6 +14,7 @@
             --muted: #5f6368; --bg: #ffffff; --surface: #f8f9fa;
             --border: #dadce0; --shadow: 0 4px 12px rgba(0,0,0,0.08);
             --container: 1140px;
+            --accent-orange: #ef7d00;
         }
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background: var(--bg); color: var(--text); line-height: 1.6; }
@@ -30,7 +31,6 @@
         .search-header { margin-bottom: 30px; border-bottom: 2px solid var(--surface); padding-bottom: 20px; }
         .search-header h1 { font-size: clamp(1.8rem, 4vw, 2.2rem); color: var(--dark); font-weight: 800; }
         
-        /* CẤU TRÚC TỐI ƯU CHO GOOGLE CSE */
         .search-results-box {
             background: #fff;
             border: 1px solid var(--border);
@@ -46,7 +46,7 @@
         .f-col a { color: rgba(255,255,255,0.7); display: block; margin-bottom: 10px; font-size: 0.9rem; }
         .f-bottom { text-align: center; margin-top: 50px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; opacity: 0.6; }
 
-        /* TÙY CHỈNH GIAO DIỆN GOOGLE CSE ĐỂ ĐỒNG BỘ MÀU SẮC */
+        /* TÙY CHỈNH GIAO DIỆN GOOGLE CSE */
         .gsc-control-cse { padding: 0 !important; border: none !important; }
         .gs-title { color: var(--primary) !important; font-weight: 700 !important; font-size: 1.2rem !important; }
         .gs-snippet { color: var(--muted) !important; line-height: 1.5 !important; }
@@ -57,7 +57,7 @@
             padding: 5px 10px !important;
         }
 
-        /* TỐI ƯU QUẢNG CÁO GOOGLE ADS (CSE) */
+        /* TỐI ƯU QUẢNG CÁO GOOGLE ADS */
         .gsc-webResult.gsc-result.gsc-promotion {
             background-color: #fffdf5 !important;
             border: 1px solid #ffeeba !important;
@@ -122,20 +122,7 @@
             font-weight: 700 !important;
         }
 
-        /* RESPONSIVE */
-        @media (min-width: 768px) and (max-width: 1024px) {
-            .f-grid { grid-template-columns: 1fr 1fr; }
-            .search-results-box { padding: 25px; border-radius: 14px; }
-        }
-        @media (max-width: 767px) {
-            .search-results-box { padding: 15px; }
-            .gs-promotion .gs-title, .gs-promotion .gs-title * { font-size: 1.2rem !important; }
-            .gs-promotion .gs-snippet { font-size: 1rem !important; }
-            .nav-links { gap: 15px; font-size: 0.85rem; }
-            nav { padding: 0 5%; }
-        }
-        
-        /* --- RSOC BOX --- */
+        /* RSOC BOX */
         .rsoc-box { 
             background: #fff; border-radius: 16px; padding: 30px; 
             box-shadow: 0 15px 45px rgba(0,0,0,0.1); margin: 45px 0;
@@ -158,6 +145,20 @@
         }
         .rsoc-text-content { display: flex; align-items: center; gap: 15px; }
         .rsoc-arrow { font-size: 1.3rem; opacity: 0.9; }
+
+        /* RESPONSIVE */
+        @media (min-width: 768px) and (max-width: 1024px) {
+            .f-grid { grid-template-columns: 1fr 1fr; }
+            .search-results-box { padding: 25px; border-radius: 14px; }
+        }
+        @media (max-width: 767px) {
+            .search-results-box { padding: 15px; }
+            .rsoc-item { font-size: 1.1rem; padding: 15px 20px; }
+            .gs-promotion .gs-title, .gs-promotion .gs-title * { font-size: 1.2rem !important; }
+            .gs-promotion .gs-snippet { font-size: 1rem !important; }
+            .nav-links { gap: 15px; font-size: 0.85rem; }
+            nav { padding: 0 5%; }
+        }
     </style>
 </head>
 <body>
@@ -180,29 +181,40 @@
             <script async src="https://cse.google.com/cse.js?cx=5049fa08ffab28b5a"></script>
             <div class="gcse-search"></div>
         </div>
-<div class="rsoc-box">
-                <div class="rsoc-title">Related searches</div>
-                <div class="rsoc-list rsoc-placeholder"></div>
-            </div>
+        <div class="rsoc-box">
+            <div class="rsoc-title">Related searches</div>
+            <div class="rsoc-list rsoc-placeholder"></div>
+        </div>
     </main>
 
     <footer>
         <div class="f-grid">
             <div class="f-col">
-                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom: 20px; display: block;">Search.TimeDay</a>
-                <p style="color: #bdc3c7; font-size: 0.9rem;">Leading provider of professional insights and strategic resources for finance and law.</p>
+                <a href="https://search.timeday.net/" class="logo" style="color:#fff; margin-bottom:15px; display:block;">Search.TimeDay</a>
+                <p style="opacity: 0.7; font-size: 0.85rem;">Professional media network providing high-fidelity search experiences for insurance and finance.</p>
             </div>
             <div class="f-col">
-                <h4>Solutions</h4>
-                <a href="#">Finance</a><a href="#">Legal</a><a href="#">Health</a><a href="#">Business</a>
+                <h4>Trending</h4>
+                <a href="category.html">Auto Insurance</a>
+                <a href="category.html">Life Quotes</a>
+                <a href="category.html">Legal Aid</a>
             </div>
             <div class="f-col">
-                <h4>Support</h4>
-                <a href="#">About Us</a><a href="#">Contact</a><a href="#">FAQ</a><a href="#">Privacy</a>
+                <h4>Information</h4>
+                <a href="about.html">About Us</a>
+                <a href="contact.html">Contact</a>
+                <a href="privacy.html">Privacy Policy</a>
             </div>
-            
+            <div class="f-col">
+                <h4>Legal</h4>
+                <a href="terms.html">Terms & Conditions</a>
+                <a href="disclaimer.html">Ad Disclosure</a>
+                <a href="disclaimer.html">Disclaimer</a>
+            </div>
         </div>
-        <div class="f-bottom">&copy; 2026 Search.TimeDay. All rights reserved.</div>
+        <div class="f-bottom">
+            &copy; 2026 Search.TimeDay. All Rights Reserved. Results powered by Google Custom Search.
+        </div>
     </footer>
 </body>
 </html>
