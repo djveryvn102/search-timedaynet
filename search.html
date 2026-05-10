@@ -173,8 +173,8 @@
 
     <main class="search-container">
         <header class="search-header">
-            <h1>Search Resources</h1>
-            <p style="color: var(--muted); font-size: 1.1rem;">Find the best quotes and expert guidance across our network.</p>
+            <h1 id="search-heading">Search Resources</h1>
+            <p style="color: var(--muted); font-size: 1.1rem;" id="search-subtitle">Find the best quotes and expert guidance across our network.</p>
         </header>
 
         <div class="search-results-box">
@@ -216,5 +216,31 @@
             &copy; 2026 Search.TimeDay. All Rights Reserved. Results powered by Google Custom Search.
         </div>
     </footer>
+
+    <script>
+    (function() {
+        const params = new URLSearchParams(window.location.search);
+        const query = params.get('q');
+        if (query) {
+            const decodedQuery = decodeURIComponent(query.replace(/\+/g, ' '));
+            
+            // Cập nhật tiêu đề trang
+            document.title = `Search Results: ${decodedQuery} | Search.TimeDay`;
+            
+            // Cập nhật tiêu đề chính h1
+            const heading = document.getElementById('search-heading');
+            if (heading) {
+                heading.textContent = `Search Results for "${decodedQuery}"`;
+            }
+            
+            // Ẩn dòng mô tả phụ (p)
+            const subtitle = document.getElementById('search-subtitle');
+            if (subtitle) {
+                subtitle.style.display = 'none';
+            }
+        }
+        // Nếu không có query, giữ nguyên giao diện mặc định
+    })();
+</script>
 </body>
 </html>
